@@ -7,7 +7,7 @@ function choice = main();
     degree=[];
     points=[];
     while true
-        choice = input('\nV‰lj ett menyval')
+        choice = input('\nV√§lj ett menyval')
         if choice == 1
             askdegree();
         elseif choice == 2
@@ -16,7 +16,7 @@ function choice = main();
     %if ~isempty(degree) && ~isempty(points)
         if choice == 3
             if ~isempty(degree) && ~isempty(points)
-                disp('Gradtalet och/eller punkterna ‰r inte definerade')
+                disp('Gradtalet och/eller punkterna √§r inte definerade')
             end
         
            coeffs = findcoeffs(degree,points)
@@ -30,6 +30,9 @@ function choice = main();
         if choice == 5
              polyroots(coeffs);
         end
-             
+            if choice == 0
+           disp('Hej d√•')
+           break
+       end 
     end
 end
