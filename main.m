@@ -7,8 +7,8 @@ function choice = main();
     degree=[];
     points=[];
     coeffs=[];
-    z=0;
-    while z==0
+    choice = '';
+    while choice ~= false
         choice = input('\nVälj ett menyval ');
         if choice == 1
             degree= askdegree();
@@ -46,8 +46,8 @@ function choice = main();
         end
        end
        if choice == 0
+           choice == false
            disp('Hej då')
-           z=1;
        end
     end
 end
