@@ -6,33 +6,47 @@ function choice = main();
     meny();
     degree=[];
     points=[];
+    coeffs=[];
     while true
-        choice = input('\nVälj ett menyval')
+        choice = input('\nVälj ett menyval ');
         if choice == 1
-            askdegree();
+            degree= askdegree();
+                meny();
         elseif choice == 2
-            askpoints();
+            points=askpoints();
+            meny();
         end
-    %if ~isempty(degree) && ~isempty(points)
         if choice == 3
-            if ~isempty(degree) && ~isempty(points)
-                disp('Gradtalet och/eller punkterna är inte definerade')
+            if or(isempty(degree),isempty(points))
+              disp('Gradtal eller punter är inte definerat.')
+              meny();
+            else
+             coeffs = findcoeffs(degree,points)
+             meny();
             end
-        
-           coeffs = findcoeffs(degree,points)
-       
         end
-    end
-    if ~isempty(degree) && ~isempty(points) && ~isempty(coeffs)
+    
          if choice == 4
+             if isempty(coeffs)
+                 disp('Koefficienter inte definerat')
+                 meny();
+             else
              plotpoly(coeffs,points);
+             meny();
+             end
         end
-        if choice == 5
+       if choice == 5
+         if isempty(coeffs)
+           disp('Koefficienter inte definerat')
+           meny();
+         else
              polyroots(coeffs);
+            meny();
         end
-            if choice == 0
+       end
+       if choice == 0
            disp('Hej då')
            break
-       end 
+       end
     end
 end
