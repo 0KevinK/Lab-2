@@ -21,7 +21,7 @@ function choice = main();
               disp('Gradtal eller punter är inte definerat.')
               meny();
             else
-             coeffs = findcoeffs(degree,points)
+             coeffs = findcoeffs(degree,points);
              meny();
             end
         end
