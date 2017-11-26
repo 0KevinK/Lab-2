@@ -46,7 +46,7 @@ function choice = main();
         end
        end
        if choice == 0
-           choice == true;
+           logic == true;
            disp('Hej då')
        end
     end
