@@ -29,7 +29,7 @@ function choice = main()
    
          if choice == 4
              if isempty(coeffs)
-                 fprintf('\nKoefficienter inte definerat\')
+                 fprintf('\nKoefficienter inte definerat\n')
                  meny();
              else
              plotpoly(coeffs,points);
