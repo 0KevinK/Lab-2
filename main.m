@@ -1,6 +1,6 @@
 % SF1511 Lab 2
 % Karl Hallberg
-% Kevin Kihlström
+% Kevin KihlstrÃ¶m
  
 function choice = main()
     meny();
@@ -22,14 +22,14 @@ function choice = main()
               fprintf('\nGradtal eller punter är inte definerat.\n')
               meny();
             else
-             coeffs = findcoeffs(degree,points);
+             coeffs = findcoeffs(degree,points)
              meny();
             end
         end
    
          if choice == 4
              if isempty(coeffs)
-                 fprintf('\nKoefficienter inte definerat\')
+                 fprintf('\nKoefficienter inte definerat\n')
                  meny();
              else
              plotpoly(coeffs,points);
