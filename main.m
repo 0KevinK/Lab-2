@@ -1,15 +1,15 @@
-%
-%
-%
-
-function choice = main();
+% SF1511 Lab 2
+% Karl Hallberg
+% Kevin Kihlström
+ 
+function choice = main()
     meny();
     degree=[];
     points=[];
     coeffs=[];
     logic = false;
     while logic == false
-        choice = input('\nVälj ett menyval ');
+        choice = input('\nVälj ett menyval: ');
         if choice == 1
             degree= askdegree();
                 meny();
@@ -19,17 +19,17 @@ function choice = main();
         end
         if choice == 3
             if or(isempty(degree),isempty(points))
-              disp('Gradtal eller punter är inte definerat.')
+              fprintf('\nGradtal eller punter är inte definerat.\n')
               meny();
             else
              coeffs = findcoeffs(degree,points);
              meny();
             end
         end
-    
+   
          if choice == 4
              if isempty(coeffs)
-                 disp('Koefficienter inte definerat')
+                 fprintf('\nKoefficienter inte definerat\')
                  meny();
              else
              plotpoly(coeffs,points);
@@ -38,7 +38,7 @@ function choice = main();
         end
        if choice == 5
          if isempty(coeffs)
-           disp('Koefficienter inte definerat')
+           fprintf('Koefficienter inte definerat')
            meny();
          else
              polyroots(coeffs);
@@ -46,8 +46,8 @@ function choice = main();
         end
        end
        if choice == 0
-           logic == true;
-           disp('Hej då')
+           logic = true;
+           fprintf('\nHej då\n');
        end
     end
 end
