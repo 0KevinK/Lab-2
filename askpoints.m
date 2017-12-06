@@ -1,12 +1,12 @@
 function points = askpoints()
 disp('Ange punkter (retur avslutar inmatningen)')
 points = [];
-A = [];
+punkt = [];
 
-A = input('Ange en punkt ([x y]):');
-      while size(A) ~= 0 % Om inget gavs i input bryts loopen
-      points = [points;A(1) A(2);]; % lägger till det som gavs i input
-      A = input('Ange en punkt ([x y]):');
+punkt = input('Ange en punkt ([x y]):');
+      while size(punkt) ~= 0 % Om inget gavs i input bryts loopen
+      points = [points;punkt(1) punkt(2);]; % lägger till det som gavs i input
+      punkt = input('Ange en punkt ([x y]):');
       end
      %matrisen som ges av detta har x-värden i första kolonnen, med
      %motsvarande y-värde i vänsta kolonnen
