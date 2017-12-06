@@ -1,11 +1,12 @@
 function plotpoly(coeffs, points);
-Xv=points(:,1);
-Yv=points(:,2);
-a=input('Steglängd för x-värden? ');
+xV = points(:,1); % x-värden är i points första kolonn
+yV = points(:,2);
+s = input('Steglängd för x-värden? ');
 
-x=[min(Xv):a:max(Xv)];
-A=polyval(coeffs,x);
-plot(x,A)
+polyX = [min(xV):s:max(xV)]; %ger x värden att beräkna
+polyY = polyval(coeffs,polyX); %beräknar ovanstående punkter
+
+plot(polyX,polyY) % plottar grafen som ges av polynomet
 hold on
-plot(Xv,Yv,'+')
+plot(xV,yV,'+') %plottar in punkterna som gavs av användaren
 end
