@@ -8,5 +8,5 @@ design = zeros(rader,nyDegree); %skapar en nollmatris som en grund för designma
 for k = 1:nyDegree
     design(:, k)=x.^(nyDegree-k);
 end
-coeffs = design \ y; %Gauss-Jordan elimination fÃ¶r att lÃ¶sa koefficienter
+coeffs = design \ y; %Gauss-Jordan elimination för att lösa koefficienter
 end
